@@ -24,7 +24,7 @@ export default function Home() {
     <FrameMetadata
       postUrl="https://build-onchain-apps.vercel.app/api/frame"
       image={{
-        src: "/mip5_layout.webp",
+        src: "https://fcnftmint.vercel.app/mip5_layout.webp",
         aspectRatio: "1.91:1"
       }}
       buttons={[{
