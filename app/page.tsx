@@ -8,7 +8,7 @@ const frameMetadata = getFrameMetadata({
       label: 'Mint NFT',
     },
   ],
-  image: 'https://jooinn.com/images/dog-67.jpg',
+  image: '/mip5_layout.webp',
   postUrl: 'https://build-onchain-apps.vercel.app/api/frame',
 });
 
