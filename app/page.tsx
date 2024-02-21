@@ -24,22 +24,32 @@ export const metadata: Metadata = {
 export default function Home() {
 
   return (
-    <FrameMetadata
-      buttons={[
-        {
-          label: 'Get Address',
-
-        },
-        {
-          label: 'Mint NFT',
-          target: 'https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord',
-        },
-      ]}
-      image={{
-        src: "https://fcnftmint.vercel.app/mip5_layout.webp",
-        aspectRatio: "1:1"
-      }}
-      postUrl="https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord"
-     />
+    <>
+      <FrameMetadata
+        buttons={[
+          {
+            label: 'Mint NFT',
+            target: 'https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord',
+          },
+        ]}
+        image={{
+          src: "https://fcnftmint.vercel.app/mip5_layout.webp",
+          aspectRatio: "1:1"
+        }}
+        postUrl="https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord"
+      />
+      <FrameMetadata
+        buttons={[
+          {
+            label: 'Address',
+          },
+        ]}
+        image={{
+          src: "https://fcnftmint.vercel.app/mip5_layout.webp",
+          aspectRatio: "1:1"
+        }}
+        postUrl="https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord"
+      />
+    </>
   );
 }
