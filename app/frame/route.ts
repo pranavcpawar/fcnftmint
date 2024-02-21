@@ -12,11 +12,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <!DOCTYPE html>
     <html lang="en">
     <head>
+    <title>Secret Word</title>
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="https://fcnftmint.vercel.app/mip5_layout.webp" />
     <meta property="fc:frame:button:1" content="Secret Word" />
     <meta property="fc:frame:post_url" content="https://giftdrop-frame.vercel.app/api/mint?mintAddress=${accountAddress}&secretWord=yourSecretWord" />
-
     </head>
     </html>`);
 }
@@ -24,3 +24,5 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 export async function POST(req: NextRequest): Promise<Response> {
     return getResponse(req);
   }
+
+export const dynamic = 'force-dynamic';
