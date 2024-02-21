@@ -1,15 +1,17 @@
 import { getFrameMetadata, FrameMetadata } from "@coinbase/onchainkit";
 import type { Metadata } from "next";
-import Image from "next/image";
 
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Mint NFT',
+      label: 'Get Address',
     },
+    {
+      label: 'Mint NFT',
+    }
   ],
-  image: '/mip5_layout.webp',
-  postUrl: 'https://build-onchain-apps.vercel.app/api/frame',
+  image: 'https://fcnftmint.vercel.app/mip5_layout.webp',
+  postUrl: 'https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord',
 });
 
 export const metadata: Metadata = {
@@ -20,17 +22,24 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+
   return (
     <FrameMetadata
-      postUrl="https://build-onchain-apps.vercel.app/api/frame"
+      buttons={[
+        {
+          label: 'Get Address',
+
+        },
+        {
+          label: 'Mint NFT',
+          target: 'https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord',
+        },
+      ]}
       image={{
         src: "https://fcnftmint.vercel.app/mip5_layout.webp",
-        aspectRatio: "1.91:1"
+        aspectRatio: "1:1"
       }}
-      buttons={[{
-        label: 'Mint NFT',
-      }]}
-
+      postUrl="https://giftdrop-frame.vercel.app/api/mint?mintAddress=0xYourAddress&secretWord=yourSecretWord"
      />
   );
 }
