@@ -10,29 +10,20 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 				secretWord = body.untrustedData.inputText;
 				accountAddress = message?.interactor.verified_accounts[0]
 		}
-		if (secretWord && accountAddress) {
-			return new NextResponse(getFrameHtmlResponse({
-				buttons: [{
-					label: 'claim'
-				}],
 
-				image: {
-					src: "https://fcnftmint.vercel.app/mip5_layout.webp",
-					aspectRatio: "1:1"
-					},
-
-				postUrl: "https://giftdrop-frame.vercel.app/api/mint?mintAddress=${accountAddress}&secretWord=${secretWord}",
-			}));
-		}
 		return new NextResponse(getFrameHtmlResponse({
 			input: {text: "Secret Message: "},
-	
 			image: {
 				src: "https://fcnftmint.vercel.app/mip5_layout.webp",
 				aspectRatio: "1:1"
 				},
-	
-			postUrl: "https://fcnftmint.vercel.app/api/frame",
+			
+			buttons: [{
+				label: 'Claim NFT',
+				action: 'post'
+
+			}],
+			postUrl: `https://fcnftmint.vercel.app/api/frame?secretWord=${secretWord}&accountAddress=${accountAddress}`,
 		}));
 	}
 
