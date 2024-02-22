@@ -13,7 +13,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
 		if (secretWord && accountAddress) {
 			return new NextResponse(getFrameHtmlResponse({
-				input: {text: "Secret Message: "},
 				image: {
 					src: "https://fcnftmint.vercel.app/mip5_layout.webp",
 					aspectRatio: "1:1"
@@ -22,10 +21,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 				buttons: [{
 					label: 'Share',
 					action: 'link',
-					target: `https://edgscan.live/?address=${accountAddress}`
+					target: `https://edgscan.live/address=${accountAddress}`
 	
 				}],
-				postUrl: `https://giftdrop-frame.vercel.app/api/mint?secretWord=${secretWord}&accountAddress=${accountAddress}`,
+				postUrl: `https://giftdrop-frame.vercel.app/api/mint?mintAddress=${accountAddress}&secretWord=${secretWord}`,
 			}));
 
 		}
